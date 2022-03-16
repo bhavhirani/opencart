@@ -236,10 +236,10 @@ $('#form-shipping-address').on('submit', function(e) {
             dataType: 'json',
             contentType: 'application/x-www-form-urlencoded',
             beforeSend: function() {
-                $('#button-shipping-address').button('loading');
+                $('#button-shipping-address').prop('disabled', true);
             },
             complete: function() {
-                $('#button-shipping-address').button('reset');
+                $('#button-shipping-address').prop('disabled', false);
             },
             success: function(json) {
                 $('#form-shipping-address').find('.is-invalid').removeClass('is-invalid');

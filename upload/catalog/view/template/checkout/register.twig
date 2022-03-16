@@ -538,10 +538,10 @@ $('#form-register').on('submit', function (e) {
             data: $('#form-register').serialize(),
             contentType: 'application/x-www-form-urlencoded',
             beforeSend: function () {
-                $(element).button('loading');
+                $(element).prop('disabled', true);
             },
             complete: function () {
-                $(element).button('reset');
+                $(element).prop('disabled', false);
             },
             success: function (json) {
                 $('#form-register').find('.is-invalid').removeClass('is-invalid');
