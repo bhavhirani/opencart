@@ -245,10 +245,10 @@ $('#input-subscription-plan, #input-payment-method').on('change', function (e) {
         data: $('#form-subscription').serialize(),
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function () {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function () {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -283,10 +283,10 @@ $('#form-history').on('submit', function (e) {
         data: $('#form-history').serialize(),
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function () {
-            $('#button-history').button('loading');
+            $('#button-history').prop('disabled', true);
         },
         complete: function () {
-            $('#button-history').button('reset');
+            $('#button-history').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -325,10 +325,10 @@ $('#form-transaction').on('submit', function (e) {
         data: $('#form-transaction').serialize(),
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function () {
-            $('#button-transaction').button('loading');
+            $('#button-transaction').prop('disabled', true);
         },
         complete: function () {
-            $('#button-transaction').button('reset');
+            $('#button-transaction').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();

@@ -31,10 +31,10 @@ $('#button-clear').on('click', function() {
             url: 'index.php?route=tool/log|clear&&user_token={{ user_token }}',
             dataType: 'json',
             beforeSend: function() {
-                $(element).button('loading');
+                $(element).prop('disabled', true);
             },
             complete: function() {
-                $(element).button('reset');
+                $(element).prop('disabled', false);
             },
             success: function(json) {
                 $('.alert-dismissible').remove();

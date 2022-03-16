@@ -113,10 +113,10 @@ $('#button-upload').on('click', function() {
                 contentType: false,
                 processData: false,
                 beforeSend: function() {
-                    $(element).button('loading');
+                    $(element).prop('disabled', true);
                 },
                 complete: function() {
-                    $(element).button('reset');
+                    $(element).prop('disabled', false);
                 },
                 success: function(json) {
                     if (json['error']) {

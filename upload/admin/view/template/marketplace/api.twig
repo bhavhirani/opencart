@@ -30,10 +30,10 @@ $('#button-save').on('click', function(e) {
         dataType: 'json',
         data: $('#modal-opencart :input'),
         beforeSend: function() {
-            $('#button-save').button('loading');
+            $('#button-save').prop('disabled', true);
         },
         complete: function() {
-            $('#button-save').button('reset');
+            $('#button-save').prop('disabled', false);
         },
         success: function(json) {
             console.log(json);

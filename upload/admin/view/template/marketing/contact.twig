@@ -244,10 +244,10 @@ $('#button-send').on('click', function() {
             data: $('#content form').serialize(),
             dataType: 'json',
             beforeSend: function() {
-                $('#button-send').button('loading');
+                $('#button-send').prop('disabled', true);
             },
             complete: function() {
-                $('#button-send').button('reset');
+                $('#button-send').prop('disabled', false);
             },
             success: function(json) {
                 $('.invalid-feedback').removeClass('d-block');

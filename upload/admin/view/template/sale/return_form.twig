@@ -266,10 +266,10 @@ $('#button-history').on('click', function (e) {
         dataType: 'json',
         data: 'return_status_id=' + $('#input-return-status').val() + '&notify=' + ($('#input-notify').prop('checked') ? 1 : 0) + '&comment=' + encodeURIComponent($('#input-comment').val()),
         beforeSend: function () {
-            $('#button-history').button('loading');
+            $('#button-history').prop('disabled', true);
         },
         complete: function () {
-            $('#button-history').button('reset');
+            $('#button-history').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();

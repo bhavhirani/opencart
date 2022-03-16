@@ -36,10 +36,10 @@ $('#startup').on('click', '.btn-success, .btn-danger', function(e) {
         url: $(element).val(),
         dataType: 'json',
         beforeSend: function() {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function() {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function(json) {
             $('.alert-dismissible').remove();

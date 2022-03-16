@@ -1162,10 +1162,10 @@ $(document).on('click', '#button-invoice', function () {
         url: 'index.php?route=sale/order|createinvoiceno&user_token={{ user_token }}&order_id={{ order_id }}',
         dataType: 'json',
         beforeSend: function () {
-            $('#button-invoice').button('loading');
+            $('#button-invoice').prop('disabled', true);
         },
         complete: function () {
-            $('#button-invoice').button('reset');
+            $('#button-invoice').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -1299,10 +1299,10 @@ $('#form-customer').on('submit', function (e) {
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function () {
-            $('#button-customer').button('loading');
+            $('#button-customer').prop('disabled', true);
         },
         complete: function () {
-            $('#button-customer').button('reset');
+            $('#button-customer').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -1563,10 +1563,10 @@ $('#form-product-add').on('submit', function (e) {
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function () {
-            $('#button-product-add').button('loading');
+            $('#button-product-add').prop('disabled', true);
         },
         complete: function () {
-            $('#button-product-add').button('reset');
+            $('#button-product-add').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -1609,10 +1609,10 @@ $('#order-products').on('submit', 'form', function (e) {
         data: $(element).serialize(),
         dataType: 'json',
         beforeSend: function () {
-            $(e.target).button('loading');
+            $(e.target).prop('disabled', true);
         },
         complete: function () {
-            $(e.target).button('reset');
+            $(e.target).prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -1645,10 +1645,10 @@ $('#form-voucher-add').on('submit', function (e) {
         data: $('#form-voucher-add').serialize(),
         dataType: 'json',
         beforeSend: function () {
-            $('#button-voucher-add').button('loading');
+            $('#button-voucher-add').prop('disabled', true);
         },
         complete: function () {
-            $('#button-voucher-add').button('reset');
+            $('#button-voucher-add').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -1700,10 +1700,10 @@ $('#order-vouchers').on('submit', 'form', function (e) {
         data: $(element).serialize(),
         dataType: 'json',
         beforeSend: function () {
-            $(e.target).button('loading');
+            $(e.target).prop('disabled', true);
         },
         complete: function () {
-            $(e.target).button('reset');
+            $(e.target).prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -1835,10 +1835,10 @@ $('#form-coupon').on('submit', function (e) {
         data: $('#form-coupon').serialize(),
         dataType: 'json',
         beforeSend: function () {
-            $('#button-coupon').button('loading');
+            $('#button-coupon').prop('disabled', true);
         },
         complete: function () {
-            $('#button-coupon').button('reset');
+            $('#button-coupon').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -1870,10 +1870,10 @@ $('#form-voucher').on('submit', function (e) {
         data: $('#form-voucher').serialize(),
         dataType: 'json',
         beforeSend: function () {
-            $('#button-voucher').button('loading');
+            $('#button-voucher').prop('disabled', true);
         },
         complete: function () {
-            $('#button-voucher').button('reset');
+            $('#button-voucher').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -1905,10 +1905,10 @@ $('#form-reward').on('submit', function (e) {
         data: $('#form-reward').serialize(),
         dataType: 'json',
         beforeSend: function () {
-            $('#button-reward').button('loading');
+            $('#button-reward').prop('disabled', true);
         },
         complete: function () {
-            $('#button-reward').button('reset');
+            $('#button-reward').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -1944,10 +1944,10 @@ $(document).on('click', '#button-reward-add, #button-reward-remove', function (e
         type: 'post',
         dataType: 'json',
         beforeSend: function () {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function () {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -2010,10 +2010,10 @@ $('#form-affiliate').on('submit', function (e) {
         data: $('#form-affiliate').serialize(),
         dataType: 'json',
         beforeSend: function () {
-            $('#button-affiliate').button('loading');
+            $('#button-affiliate').prop('disabled', true);
         },
         complete: function () {
-            $('#button-affiliate').button('reset');
+            $('#button-affiliate').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -2053,10 +2053,10 @@ $(document).on('click', '#button-commission-add, #button-commission-remove', fun
         type: 'post',
         dataType: 'json',
         beforeSend: function () {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function () {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -2146,10 +2146,10 @@ $('#form-payment-address').on('submit', function (e) {
         data: $('#form-payment-address').serialize(),
         dataType: 'json',
         beforeSend: function () {
-            $('#button-payment-address').button('loading');
+            $('#button-payment-address').prop('disabled', true);
         },
         complete: function () {
-            $('#button-payment-address').button('reset');
+            $('#button-payment-address').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -2320,10 +2320,10 @@ $('#form-shipping-address').on('submit', function (e) {
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function () {
-            $('#button-shipping-address').button('loading');
+            $('#button-shipping-address').prop('disabled', true);
         },
         complete: function () {
-            $('#button-shipping-address').button('reset');
+            $('#button-shipping-address').prop('disabled', false);
         },
         success: function (json) {
             $('#form-shipping-address .alert-dismissible').remove();
@@ -2439,10 +2439,10 @@ $('#button-payment-method').on('click', function () {
         url: 'index.php?route=sale/order|call&user_token={{ user_token }}&action=sale/payment_method',
         dataType: 'json',
         beforeSend: function () {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function () {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function (json) {
             $('#alert .alert-dismissible').remove();
@@ -2517,10 +2517,10 @@ $('#button-shipping-method').on('click', function () {
         url: 'index.php?route=sale/order|call&user_token={{ user_token }}&action=sale/shipping_method',
         dataType: 'json',
         beforeSend: function () {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function () {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -2607,10 +2607,10 @@ $('#form-comment').on('submit', function (e) {
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function () {
-            $('#button-comment').button('loading');
+            $('#button-comment').prop('disabled', true);
         },
         complete: function () {
-            $('#button-comment').button('reset');
+            $('#button-comment').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -2638,10 +2638,10 @@ $('#button-refresh').on('click', function () {
         url: 'index.php?route=sale/order|call&user_token={{ user_token }}&action=sale/cart',
         dataType: 'json',
         beforeSend: function () {
-            $('#button-confirm').button('loading');
+            $('#button-confirm').prop('disabled', true);
         },
         complete: function () {
-            $('#button-confirm').button('reset');
+            $('#button-confirm').prop('disabled', false);
         },
         success: function (json) {
             html = '';
@@ -2759,10 +2759,10 @@ $('#button-confirm').on('click', function () {
         url: 'index.php?route=sale/order|call&user_token={{ user_token }}&action=sale/order|confirm',
         dataType: 'json',
         beforeSend: function () {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function () {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();
@@ -2823,10 +2823,10 @@ $('#form-history').on('submit', function (e) {
         data: $('#form-history').serialize(),
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function () {
-            $('#button-history').button('loading');
+            $('#button-history').prop('disabled', true);
         },
         complete: function () {
-            $('#button-history').button('reset');
+            $('#button-history').prop('disabled', false);
         },
         success: function (json) {
             $('.alert-dismissible').remove();

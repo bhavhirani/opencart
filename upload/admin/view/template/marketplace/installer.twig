@@ -77,10 +77,10 @@ $('#button-upload').on('click', function() {
                 contentType: false,
                 processData: false,
                 beforeSend: function() {
-                    $('#button-upload').button('loading');
+                    $('#button-upload').prop('disabled', true);
                 },
                 complete: function() {
-                    $('#button-upload').button('reset');
+                    $('#button-upload').prop('disabled', false);
                 },
                 success: function(json) {
                     if (json['error']) {
@@ -114,10 +114,10 @@ $('#extension').on('click', '.btn-success, .btn-warning', function(e) {
         url: $(element).attr('href'),
         dataType: 'json',
         beforeSend: function() {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function() {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function(json) {
             $('.alert-dismissible').remove();
@@ -151,10 +151,10 @@ $('#extension').on('click', '.btn-danger', function(e) {
             url: $(element).attr('href'),
             dataType: 'json',
             beforeSend: function() {
-                $(element).button('loading');
+                $(element).prop('disabled', true);
             },
             complete: function() {
-                $(element).button('reset');
+                $(element).prop('disabled', false);
             },
             success: function(json) {
                 $('.alert-dismissible').remove();

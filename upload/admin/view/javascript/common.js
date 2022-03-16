@@ -179,10 +179,10 @@ $(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function(e) {
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function() {
-           $(button).button('loading');
+           $(button).prop('disabled', true);
         },
         complete: function() {
-           $(button).button('reset');
+           $(button).prop('disabled', false);
         },
         success: function(json) {
             $(element).find('.is-invalid').removeClass('is-invalid');
@@ -270,10 +270,10 @@ $(document).on('click', '[data-oc-toggle=\'upload\']', function() {
                     contentType: false,
                     processData: false,
                     beforeSend: function() {
-                        $(element).button('loading');
+                        $(element).prop('disabled', true);
                     },
                     complete: function() {
-                        $(element).button('reset');
+                        $(element).prop('disabled', false);
                     },
                     success: function(json) {
                         console.log(json);
@@ -309,10 +309,10 @@ $(document).on('click', '[data-oc-toggle=\'image\']', function(e) {
         url: 'index.php?route=common/filemanager&user_token=' + getURLVar('user_token') + '&target=' + encodeURIComponent($(this).attr('data-oc-target')) + '&thumb=' + encodeURIComponent($(this).attr('data-oc-thumb')),
         dataType: 'html',
         beforeSend: function() {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function() {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function(html) {
             console.log(html);
@@ -376,7 +376,7 @@ var chain = new Chain();
 }(jQuery);
 
 $(document).ready(function() {
-    $('button').button('loading');
+    $('button').prop('disabled', true);
 });
 
 

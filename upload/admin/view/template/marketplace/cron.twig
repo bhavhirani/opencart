@@ -48,10 +48,10 @@ $('#cron').on('click', '.btn-success, .btn-warning, .btn-danger', function() {
         url: $(element).val(),
         dataType: 'json',
         beforeSend: function() {
-            $(element).button('loading');
+            $(element).prop('disabled', true);
         },
         complete: function() {
-            $(element).button('reset');
+            $(element).prop('disabled', false);
         },
         success: function(json) {
             if (json['error']) {
