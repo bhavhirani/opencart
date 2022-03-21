@@ -3227,7 +3227,7 @@ function db_schema() {
 				'auto_increment' => true
 			],
 			[
-				'name' => 'reference',
+				'name' => 'transaction_id',
 				'type' => 'varchar(100)',
 				'not_null' => true
 			],
@@ -5338,11 +5338,6 @@ function db_schema() {
 				'not_null' => true
 			],
 			[
-				'name' => 'reference',
-				'type' => 'varchar(100)',
-				'not_null' => true
-			],
-			[
 				'name' => 'subscription_plan_id',
 				'type' => 'int(11)',
 				'not_null' => true
@@ -5418,13 +5413,13 @@ function db_schema() {
 				'not_null' => true
 			],
 			[
-				'name' => 'subscription_status_id',
-				'type' => 'int(11)',
+				'name' => 'date_next',
+				'type' => 'datetime',
 				'not_null' => true
 			],
 			[
-				'name' => 'date_next',
-				'type' => 'datetime',
+				'name' => 'subscription_status_id',
+				'type' => 'int(11)',
 				'not_null' => true
 			],
 			[
@@ -5654,13 +5649,28 @@ function db_schema() {
 				'not_null' => true
 			],
 			[
-				'name' => 'reference',
+				'name' => 'transaction_id',
 				'type' => 'varchar(255)',
+				'not_null' => true
+			],
+			[
+				'name' => 'description',
+				'type' => 'text',
 				'not_null' => true
 			],
 			[
 				'name' => 'amount',
 				'type' => 'decimal(10,4)',
+				'not_null' => true
+			],
+			[
+				'name' => 'payment_method',
+				'type' => 'varchar(128)',
+				'not_null' => true
+			],
+			[
+				'name' => 'payment_code',
+				'type' => 'varchar(128)',
 				'not_null' => true
 			],
 			[
