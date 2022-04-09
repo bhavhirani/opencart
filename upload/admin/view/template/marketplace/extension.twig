@@ -68,10 +68,17 @@ $('#extension').on('click', '#recommended .btn-primary', function(e) {
         url: $(element).attr('value'),
         dataType: 'json',
         beforeSend: function() {
+<<<<<<< HEAD
             $(element).prop('disabled', true);
         },
         complete: function() {
             $(element).prop('disabled', false);
+=======
+            $(element).prop('disabled', true).addClass('loading');
+        },
+        complete: function() {
+            $(element).prop('disabled', false).removeClass('loading');
+>>>>>>> bc82b702d69d300475109b626af79a12925f32be
         },
         success: function(json) {
             $('.alert-dismissible').remove();
@@ -136,10 +143,17 @@ $('#extension').on('click', '.btn-success', function(e) {
         url: $(element).attr('href'),
         dataType: 'json',
         beforeSend: function() {
+<<<<<<< HEAD
             $(element).prop('disabled', true);
         },
         complete: function() {
             $(element).prop('disabled', false);
+=======
+            $(element).prop('disabled', true).addClass('loading');
+        },
+        complete: function() {
+            $(element).prop('disabled', false).removeClass('loading');
+>>>>>>> bc82b702d69d300475109b626af79a12925f32be
         },
         success: function(json) {
             $('.alert-dismissible').remove();
@@ -171,10 +185,17 @@ $('#extension').on('click', '.btn-danger, .btn-outline-danger', function(e) {
             url: $(element).attr('href'),
             dataType: 'json',
             beforeSend: function() {
+<<<<<<< HEAD
                 $(element).prop('disabled', true);
             },
             complete: function() {
                 $(element).prop('disabled', false);
+=======
+                $(element).prop('disabled', true).addClass('loading');
+            },
+            complete: function() {
+                $(element).prop('disabled', false).removeClass('loading');
+>>>>>>> bc82b702d69d300475109b626af79a12925f32be
             },
             success: function(json) {
                 console.log(json);

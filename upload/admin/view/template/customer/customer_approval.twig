@@ -87,10 +87,17 @@ $('#customer-approval').on('click', '.btn-success, .btn-danger', function(e) {
         url: $(element).val(),
         dataType: 'json',
         beforeSend: function() {
+<<<<<<< HEAD
             $(element).prop('disabled', true);
         },
         complete: function() {
             $(element).prop('disabled', false);
+=======
+            $(element).prop('disabled', true).addClass('loading');
+        },
+        complete: function() {
+            $(element).prop('disabled', false).removeClass('loading');
+>>>>>>> bc82b702d69d300475109b626af79a12925f32be
         },
         success: function(json) {
             if (json['error']) {

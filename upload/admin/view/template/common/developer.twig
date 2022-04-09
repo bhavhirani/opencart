@@ -77,10 +77,17 @@ $('#modal-developer table button').on('click', function() {
         url: 'index.php?route=common/developer|' + $(element).attr('value') + '&user_token={{ user_token }}',
         dataType: 'json',
         beforeSend: function() {
+<<<<<<< HEAD
             $(element).prop('disabled', true);
         },
         complete: function() {
             $(element).prop('disabled', false);
+=======
+            $(element).prop('disabled', true).addClass('loading');
+        },
+        complete: function() {
+            $(element).prop('disabled', false).removeClass('loading');
+>>>>>>> bc82b702d69d300475109b626af79a12925f32be
         },
         success: function(json) {
             $('.alert-dismissible').remove();

@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" id="button-save" data-oc-loading-text="{{ text_loading }}" class="btn btn-primary">{{ button_save }}</button>
+        <button type="button" id="button-save" class="btn btn-primary">{{ button_save }}</button>
       </div>
     </div>
   </div>
@@ -30,10 +30,17 @@ $('#button-save').on('click', function(e) {
         dataType: 'json',
         data: $('#modal-opencart :input'),
         beforeSend: function() {
+<<<<<<< HEAD
             $('#button-save').prop('disabled', true);
         },
         complete: function() {
             $('#button-save').prop('disabled', false);
+=======
+            $('#button-save').prop('disabled', true).addClass('loading');
+        },
+        complete: function() {
+            $('#button-save').prop('disabled', false).removeClass('loading');
+>>>>>>> bc82b702d69d300475109b626af79a12925f32be
         },
         success: function(json) {
             console.log(json);

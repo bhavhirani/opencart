@@ -139,10 +139,17 @@ $('#button-opencart').on('click', function(e) {
         url: 'index.php?route=marketplace/api&user_token={{ user_token }}',
         dataType: 'html',
         beforeSend: function() {
+<<<<<<< HEAD
             $('#button-opencart').prop('disabled', true);
         },
         complete: function() {
             $('#button-opencart').prop('disabled', false);
+=======
+            $('#button-opencart').prop('disabled', true).addClass('loading');
+        },
+        complete: function() {
+            $('#button-opencart').prop('disabled', false).removeClass('loading');
+>>>>>>> bc82b702d69d300475109b626af79a12925f32be
         },
         success: function(html) {
             $('body').append(html);

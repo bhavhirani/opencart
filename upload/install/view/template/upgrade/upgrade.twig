@@ -57,12 +57,16 @@ $('#button-continue').on('click', function () {
             url: next,
             dataType: 'json',
             beforeSend: function () {
-                $('#button-continue').button('loading');
+                $('#button-continue').prop('disabled', true).addClass('loading');
             },
             complete: function () {
-                $('#button-continue').button('reset');
+                $('#button-continue').prop('disabled', false).removeClass('loading');
             },
             success: function (json) {
+                if (json['redirect']) {
+                    location = json['redirect'];
+                }
+
                 if (json['error']) {
                     $('#progress-bar').addClass('progress-bar-danger');
                     $('#progress-text').html('<div class="text-danger">' + json['error'] + '</div>');
